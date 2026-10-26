@@ -114,3 +114,25 @@ In the following, the target key locations are named after their standard Colema
 - `‽` added at `AltGr-Shift-b`
 - `§` added at `AltGr-Shift-7`
 - `‰` added at `AltGr-Shift-8`
+
+## Install
+
+To install the keyboard, copy (or link) the file in `symbols/colemak-dh-cz` in your local xkb directory, e.g.:
+
+```
+ln -fs $HOME/src/colemak-dh-iso-cz/symbols/colemak-dh-cz $XDG_CONFIG_HOME/xkb/symbols/colemak-dh-cz
+```
+
+To load it at runtime, run:
+```
+setxkbmap -I"$HOME/.config/xkb" -model pc105 -layout colemak-dh-cz -variant colemak_dh_cz -print | \
+  xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
+```
+
+I also add the variant `caps:escape_shifted_capslock` which modifies the CapsLock behavior to my liking:
+```
+setxkbmap -I"$HOME/.config/xkb" -model pc105 -layout colemak-dh-cz caps:escape_shifted_capslock -variant colemak_dh_cz -print | \
+  xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
+```
+
+If you like it, you can add the same command to your `~/.xinitrc` to load it when X starts.
