@@ -1,0 +1,49 @@
+xkb_symbols "colemak_dh_cz" {
+
+    // Modified Colemak-DH layout with easy access to all
+    // Czech symbols.
+    // http://github.com/fleetingbytes/colemak-dh-cz
+
+    include "us(colemak_dh)"
+    name[Group1]= "Czech (Colemak-DH-CZ)";
+
+    // Top row: Czech letters on unshifted, original symbols on shifted,
+    // numbers on AltGr, relocated specials on AltGr-Shift.
+    // Dead keys from the base layout are preserved where not overridden.
+    key <AE01> { [       dcaron,       exclam,               1,   leftsinglequotemark ] };
+    key <AE02> { [       tcaron,           at,               2,  rightsinglequotemark ] };
+    key <AE03> { [        uring,   numbersign,               3,              EuroSign ] };
+    key <AE04> { [       eacute,       dollar,               4,              sterling ] };
+    key <AE05> { [       aacute,      percent,               5,                   yen ] };
+    key <AE06> { [       ncaron,  asciicircum,               6,                  cent ] };
+    key <AE07> { [       uacute,    ampersand,               7,               section ] };
+    key <AE08> { [       yacute,     asterisk,               8,              permille ] };
+    key <AE09> { [       ecaron,    parenleft,               9,   leftdoublequotemark ] };
+    key <AE10> { [       iacute,   parenright,               0,  rightdoublequotemark ] };
+
+    // Q/W/F become Czech carons; originals move to AltGr.
+    // X moves to AltGr of U.
+    key <AD01> { [       ccaron,       Ccaron,               q,                     Q ] };
+    key <AD02> { [       zcaron,       Zcaron,               w,                     W ] };
+    key <AD03> { [       rcaron,       Rcaron,               f,                     F ] };
+    key <AD05> { [            b,            B,      dead_breve,                 U203D ] }; // interrobang
+    key <AD08> { [            u,            U,               x,                     X ] };
+
+    // Backslash key (BKSL) gets thorn/THORN on AltGr levels.
+    key <BKSL> { [   backslash,           bar,           thorn,                 THORN ] };
+
+    // Relocated specials on AltGr-Shift; dead keys preserved on AltGr.
+    key <AC02> { [            r,            R,      dead_grave,           twosuperior ] };
+    key <AC05> { [            g,            G,     dead_ogonek,             masculine ] };
+    key <AC06> { [            m,            M,     dead_macron,           ordfeminine ] };
+
+    // Bottom row: X becomes Š; specials relocated to AltGr-Shift.
+    // AB05 is already z/Z/ae/AE from the included colemak_dh.
+    key <AB01> { [       scaron,       Scaron, dead_circumflex,           onesuperior ] };
+    key <AB03> { [            d,            D,  dead_diaeresis,         threesuperior ] };
+    key <AB06> { [            k,            K,  dead_abovering,               Hstroke ] };
+    key <AB07> { [            h,            H,      dead_caron,               hstroke ] };
+    key <AB08> { [        comma,         less,    dead_cedilla,                   eth ] };
+    key <AB09> { [       period,      greater,   dead_abovedot,                   ETH ] };
+    key <AB10> { [        slash,     question,    questiondown,            exclamdown ] };
+};
