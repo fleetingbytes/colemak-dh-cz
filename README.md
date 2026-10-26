@@ -26,7 +26,7 @@ Where `a`, `b`, `c`, `d` represent the character mapped and layer 1 through laye
 ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
 │        │QÄ   │WÅ   │FÃ   │PØ   │B~   │JĐ   │LŁ   │UÚ   │YÜ   │:Ö   │{‹   │}›   │        │
 │ tab    │qä   │wå   │fã   │pø   │b˘   │jđ   │lł   │uú   │yü   │;ö   │[«   │]»   │  enter │
-├────────┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┐      │
+├────────┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┐      │
 │          │AÁ   │R~   │Sẞ   │T˝   │G~   │M~   │NÑ   │EÉ   │IÍ   │OÓ   │"Õ   │|~   │      │
 │ caps lk  │aá   │r`   │sß   │t´   │g˛   │m¯   │nñ   │eé   │ií   │oó   │'õ   │\~   │      │
 ├───────┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬───────────┤
@@ -49,7 +49,7 @@ I propose the following Colemak layout to write Czech more easily:
 ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
 │        │ČQ   │ŽW   │ŘF   │PØ   │B‽   │JĐ   │LŁ   │UX   │YÜ   │:Ö   │{‹   │}›   │        │
 │ tab    │čq   │žw   │řf   │pø   │b˘   │jđ   │lł   │ux   │yü   │;ö   │[«   │]»   │  enter │
-├────────┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┐      │
+├────────┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┐      │
 │          │AÁ   │R²   │Sẞ   │T˝   │Gº   │Mª   │NÑ   │EÉ   │IÍ   │OÓ   │"Õ   │|Þ   │      │
 │ caps lk  │aá   │r`   │sß   │t´   │g˛   │m¯   │nñ   │eé   │ií   │oó   │'õ   │\þ   │      │
 ├───────┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬───────────┤
@@ -120,11 +120,11 @@ In the following, the target key locations are named after their standard Colema
 ```
 xkb_symbols "colemak_dh_czech_iso" {
 
-    // Modified Colemak-DH (ISO) layout with easy access to all
+    // Modified Colemak-DH layout with easy access to all
     // Czech symbols.
     // http://github.com/fleetingbytes/colemak-dh-iso-cz
 
-    include "us(colemak_dh_iso)"
+    include "us(colemak_dh)"
     name[Group1]= "Czech (Colemak-DH ISO)";
 
     // Top row: Czech letters on unshifted, original symbols on shifted,
@@ -158,10 +158,9 @@ xkb_symbols "colemak_dh_czech_iso" {
     key <AC06> { [            m,            M,    dead_macron,            ordfeminine ] };
 
     // Bottom row: X becomes Š; specials relocated to AltGr-Shift.
-    // AB05 restored to Z (matching the schema; base ISO variant places backslash here).
+    // AB05 is already z/Z/ae/AE from the included colemak_dh.
     key <AB01> { [       scaron,       Scaron, dead_circumflex,           onesuperior ] };
     key <AB03> { [            d,            D, dead_diaeresis,         threesuperior ] };
-    key <AB05> { [            z,            Z,              ae,                     AE ] };
     key <AB06> { [            k,            K, dead_abovering,               Hstroke ] };
     key <AB07> { [            h,            H,      dead_caron,               hstroke ] };
     key <AB08> { [        comma,         less,    dead_cedilla,                    eth ] };
