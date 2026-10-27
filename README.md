@@ -71,7 +71,7 @@ I propose the following modified Colemak layout to write Czech more easily:
 
 - Every Czech letter should be typable in one to three keystrokes (including dead keys and layer shifts)
 - Most frequent Czech letters shall be preferred to easily accessible numbers on the top row
-- Frequent Czech letters shall be preferred to easily accessible `Q`, `W`, `X`, `F` which are rare in Czech texts.
+- Frequent Czech letters shall be preferred to `Q`, `W`, `X`, `F` which are rare in Czech texts.
 - Preserve the location of frequent special characters, i. e. `~!@#$%^&*()-_=+;:[]{}'"\|<>/?`
 - Preserve the location of dead keys of the US colemak layout
 - Prefer to move rarely used special characters to some of the `asciitilde` places, rather than to lose them entirely
@@ -81,7 +81,9 @@ I propose the following modified Colemak layout to write Czech more easily:
 ### Result
 
 - Czech letters are easily accessible, most of them in one key stroke.
-- Every character typable on Colemak-DH is also typable on Colemak-DH-CZ, although some of them moved to other places or layers. Ultimately, almost all of the extra ways how to write `asciitilde` have been repurposed for something more useful.
+- `Q`, `W`, `X`, `F` and numbers are only acessible through AltGr, which breaks some keyboard shortcuts.
+- Every character typable on Colemak-DH is also typable on Colemak-DH-CZ, although some of them moved to other places or layers.
+
 
 ### Changes with regards to Colemak-DH
 
