@@ -148,7 +148,7 @@ setxkbmap -I "$XDG_CONFIG_HOME/xkb" \
           -option caps:escape_shifted_capslock \
           -option grp:alt_shift_toggle \
           -print | \
-xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
+xkbcomp -w0 -I "$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 ```
 
 The above command is also ready to be added to your `~/.xinitrc` or `~/.xsession` (before the `exec`) to load these keyboard layouts when X starts.
