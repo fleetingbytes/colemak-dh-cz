@@ -154,7 +154,7 @@ xkbcomp -w0 -I "$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 The above command is also ready to be added to your `~/.xinitrc` or `~/.xsession` (before the `exec`) to load these keyboard layouts when X starts.
 
 
-## References:
+## References
 
 - Jan Králík: [Grapheme Frequencies][kralik]
 - Stefan Trost: [Buchstabenhäufigkeit Tschechisch][trost]
