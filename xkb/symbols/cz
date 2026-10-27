@@ -22,6 +22,7 @@ xkb_symbols "colemak_dh_cz" {
     key <AE10> { [       iacute,   parenright,               0,  rightdoublequotemark ] };
 
     // Q/W/F become Czech carons; originals move to AltGr.
+    // add interrobang on level 4 of B.
     // X moves to AltGr of U.
     key <AD01> { [       ccaron,       Ccaron,               q,                     Q ] };
     key <AD02> { [       zcaron,       Zcaron,               w,                     W ] };
@@ -29,7 +30,7 @@ xkb_symbols "colemak_dh_cz" {
     key <AD05> { [            b,            B,      dead_breve,                 U203D ] }; // interrobang
     key <AD08> { [            u,            U,               x,                     X ] };
 
-    // Backslash key (BKSL) gets thorn/THORN on AltGr levels.
+    // thorn/THORN moving to AltGr levels of Backslash key (BKSL).
     key <BKSL> { [   backslash,           bar,           thorn,                 THORN ] };
 
     // Relocated specials on AltGr-Shift; dead keys preserved on AltGr.

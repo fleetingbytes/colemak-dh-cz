@@ -1,6 +1,10 @@
 # Colemak Layout for Czech
 
-Using the US-American Colemak DH layout, it is possible to type Czech characters, but they are not readily accessible. Heavy use of dead keys and layer 3, layer 4 is necessary. The ASCII art below show the basic keyboard keys with their four layers of mappings for each key like this:
+This repository provides the layout definition file for the [X Window System][x].
+
+In the following I present the standard `us(colemak_dh)` layout provided with X and then my modification of it, `cz(colemak_dh_cz)`, which makes all the Czech characters easier to type.
+
+The ASCII diagrams below show the basic keyboard keys with their four layers of mappings for each key like this:
 
 ```
 ┌─────┐
@@ -17,7 +21,9 @@ Here `a`, `b`, `c`, `d` represent the characters mapped to layer 1 through layer
 - `d`: layer 4 (AltGr, shifted)
 
 
-## Current Colemak DH (US layout, colemak_dh)
+## Standard Colemak DH (US layout, variant colemak_dh)
+
+With the standard Colemak-DH variant of the US layout it is possible to type Czech characters but they are not readily accessible. Heavy use of dead keys and layer 3, layer 4 is necessary. It looks like this:
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
@@ -40,7 +46,7 @@ Here `a`, `b`, `c`, `d` represent the characters mapped to layer 1 through layer
 
 ## Colemak DH CZ (This Layout)
 
-I propose the following Colemak layout to write Czech more easily:
+I propose the following modified Colemak layout to write Czech more easily:
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
@@ -65,7 +71,7 @@ I propose the following Colemak layout to write Czech more easily:
 
 - Every Czech letter should be typable in one to three keystrokes (including dead keys and layer shifts)
 - Most frequent Czech letters shall be preferred to easily accessible numbers on the top row
-- Frequent Czech letters shall be preferred to easily accessible `Q`, `W`, `X`, `F` which are very rare in Czech texts.
+- Frequent Czech letters shall be preferred to easily accessible `Q`, `W`, `X`, `F` which are rare in Czech texts.
 - Preserve the location frequent special characters, i. e. `~!@#$%^&*()-_=+;:[]{}'"\|<>/?`
 - Preserve the location of dead keys of the US colemak layout
 - Prefer to move rarely used special characters to some of the `asciitilde` places, rather than to lose them entirely
@@ -78,7 +84,7 @@ I propose the following Colemak layout to write Czech more easily:
 
 ### Summary
 
-In the following, the target key locations are named after their standard Colemak location. Thus, when I say something like "`X` moved to layer 3 of `U`" this means that the character `X` moved to layer 3 of that key where the Colemak-DH layout has `U`, not where the US QWERTY layout has `U`.
+In the following overview the target key locations are named after their standard Colemak location. Thus, when I say something like _`X` moved to layer 3 of `U`_ this means that the character `X` moved to layer 3 of that key where the Colemak-DH layout has `U`, not where the US QWERTY layout has `U`.
 
 #### Regular Characters
 
@@ -117,7 +123,7 @@ In the following, the target key locations are named after their standard Colema
 
 ## Install
 
-To install the keyboard layout, just link the file in `symbols/colemak-dh-cz` in your local xkb directory (or copy it there), e.g.:
+To install the keyboard layout, just link the file in `xkb/symbols/colemak-dh-cz` in your local xkb directory (or copy it there), e.g.:
 
 ```
 ln -fs $HOME/src/colemak-dh-iso-cz/symbols/colemak-dh-cz $XDG_CONFIG_HOME/xkb/symbols/colemak-dh-cz
@@ -126,8 +132,8 @@ ln -fs $HOME/src/colemak-dh-iso-cz/symbols/colemak-dh-cz $XDG_CONFIG_HOME/xkb/sy
 
 Load it like this:
 ```
-setxkbmap -I "$XDG_CONFIG_HOME/xkb" -model pc105 -layout colemak-dh-cz -variant colemak_dh_cz -print | \
-  xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
+setxkbmap -I "$XDG_CONFIG_HOME/xkb" -model pc105 -layout cz -variant colemak_dh_cz -print | \
+xkbcomp -w0 -I "$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 ```
 
 Use it together with your other layout, e.g.:
@@ -135,7 +141,7 @@ Use it together with your other layout, e.g.:
 ```
 setxkbmap -I "$XDG_CONFIG_HOME/xkb" \
           -model pc105 \
-          -layout us,colemak-dh-cz \
+          -layout us,cz \
           -variant colemak_dh,colemak_dh_cz \
           -option caps:escape_shifted_capslock \
           -option grp:alt_shift_toggle \
@@ -145,3 +151,8 @@ xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 
 The above command is also what you should add to your `~/.xinitrc` or `~/.xsession` (before the `exec`) to load it when X starts.
 
+## References:
+- Jan Králík: [Grapheme frequencies](http://www.czech-language.cz/alphabet/alph-prehled.html)
+- Stefan Trost: [Buchstabenhäufigkeit Tschechisch](https://www.sttmedia.de/buchstabenhaeufigkeit-tschechisch)
+
+[x]: https://grokipedia.com/page/X%20Window%20System
