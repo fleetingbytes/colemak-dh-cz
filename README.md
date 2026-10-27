@@ -117,22 +117,31 @@ In the following, the target key locations are named after their standard Colema
 
 ## Install
 
-To install the keyboard, copy (or link) the file in `symbols/colemak-dh-cz` in your local xkb directory, e.g.:
+To install the keyboard layout, just link the file in `symbols/colemak-dh-cz` in your local xkb directory (or copy it there), e.g.:
 
 ```
 ln -fs $HOME/src/colemak-dh-iso-cz/symbols/colemak-dh-cz $XDG_CONFIG_HOME/xkb/symbols/colemak-dh-cz
 ```
 
-To load it at runtime, run:
+
+Load it like this:
 ```
-setxkbmap -I"$HOME/.config/xkb" -model pc105 -layout colemak-dh-cz -variant colemak_dh_cz -print | \
+setxkbmap -I "$XDG_CONFIG_HOME/xkb" -model pc105 -layout colemak-dh-cz -variant colemak_dh_cz -print | \
   xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 ```
 
-I also add the variant `caps:escape_shifted_capslock` which modifies the CapsLock behavior to my liking:
+Use it together with your other layout, e.g.:
+
 ```
-setxkbmap -I"$HOME/.config/xkb" -model pc105 -layout colemak-dh-cz caps:escape_shifted_capslock -variant colemak_dh_cz -print | \
-  xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
+setxkbmap -I "$XDG_CONFIG_HOME/xkb" \
+          -model pc105 \
+          -layout us,colemak-dh-cz \
+          -variant colemak_dh,colemak_dh_cz \
+          -option caps:escape_shifted_capslock \
+          -option grp:alt_shift_toggle \
+          -print | \
+xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 ```
 
-If you like it, you can add the same command to your `~/.xinitrc` to load it when X starts.
+The above command is also what you should add to your `~/.xinitrc` or `~/.xsession` (before the `exec`) to load it when X starts.
+
