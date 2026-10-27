@@ -51,7 +51,7 @@ I propose the following modified Colemak layout to write Czech more easily:
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
 │~~   │!‘   │@’   │#€   │$£   │%¥   │^¢   │&§   │*‰   │(“   │)”   │_—   │+÷   │           │
-│`~   │ď1   │ť2   │ů3   │é4   │á5   │ň6   │ú7   │ý8   │ě9   │í0   │-–   │=×   │ backspace │
+│`~   │ď1   │ť2   │ů3   │á4   │é5   │ň6   │ú7   │ý8   │ě9   │í0   │-–   │=×   │ backspace │
 ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
 │        │ČQ   │ŽW   │ŘF   │PØ   │B‽   │JĐ   │LŁ   │UX   │YÜ   │:Ö   │{‹   │}›   │        │
 │ tab    │čq   │žw   │řf   │pø   │b˘   │jđ   │lł   │ux   │yü   │;ö   │[«   │]»   │  enter │
@@ -98,7 +98,7 @@ In the following overview the target key locations are named after their standar
 - `X` now types `Š`
 - original Colemak `Q`, `W`, `F` stayed on their keys but moved to layer 3
 - original Colemak `X` moved to layer 3 of `U`
-- original Colemak `1234567890` now type `ďťůéáňúýěí`
+- original Colemak `1234567890` now type `ďťůáéňúýěí`
 - Czech `ĎŤŮÉÁŇÚÝĚÍ` have to be typed through the dead keys or layer 3
 
 #### Special characters

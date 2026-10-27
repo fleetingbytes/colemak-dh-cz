@@ -13,8 +13,8 @@ xkb_symbols "colemak_dh_cz" {
     key <AE01> { [       dcaron,       exclam,               1,   leftsinglequotemark ] };
     key <AE02> { [       tcaron,           at,               2,  rightsinglequotemark ] };
     key <AE03> { [        uring,   numbersign,               3,              EuroSign ] };
-    key <AE04> { [       eacute,       dollar,               4,              sterling ] };
-    key <AE05> { [       aacute,      percent,               5,                   yen ] };
+    key <AE04> { [       aacute,       dollar,               4,              sterling ] };
+    key <AE05> { [       eacute,      percent,               5,                   yen ] };
     key <AE06> { [       ncaron,  asciicircum,               6,                  cent ] };
     key <AE07> { [       uacute,    ampersand,               7,               section ] };
     key <AE08> { [       yacute,     asterisk,               8,              permille ] };
