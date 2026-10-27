@@ -128,19 +128,19 @@ In the following overview the target key locations are named after their standar
 
 To install the keyboard layout, just link the file in `xkb/symbols/cz` in your local xkb directory (or copy it there), e.g.:
 
-```
+```bash
 ln -fs $HOME/src/colemak-dh-iso-cz/symbols/cz $XDG_CONFIG_HOME/xkb/symbols/cz
 ```
 
 Load it like this:
-```
+```bash
 setxkbmap -I "$XDG_CONFIG_HOME/xkb" -model pc105 -layout cz -variant colemak_dh_cz -print | \
 xkbcomp -w0 -I "$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 ```
 
 Although, you are probably going to use it in alternation with your other layout, e.g. with the standard `us(colemak_dh)`:
 
-```
+```bash
 setxkbmap -I "$XDG_CONFIG_HOME/xkb" \
           -model pc105 \
           -layout us,cz \
