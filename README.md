@@ -72,17 +72,18 @@ I propose the following modified Colemak layout to write Czech more easily:
 - Every Czech letter should be typable in one to three keystrokes (including dead keys and layer shifts)
 - Most frequent Czech letters shall be preferred to easily accessible numbers on the top row
 - Frequent Czech letters shall be preferred to easily accessible `Q`, `W`, `X`, `F` which are rare in Czech texts.
-- Preserve the location frequent special characters, i. e. `~!@#$%^&*()-_=+;:[]{}'"\|<>/?`
+- Preserve the location of frequent special characters, i. e. `~!@#$%^&*()-_=+;:[]{}'"\|<>/?`
 - Preserve the location of dead keys of the US colemak layout
 - Prefer to move rarely used special characters to some of the `asciitilde` places, rather than to lose them entirely
-- Add a few rare special characters in favor of an extra way to type `asciitilde`
+- Add a few rare special characters in favor of yet another extra way to type `asciitilde`
 
 
-## Changes with regards to Colemak-DH
+### Result
 
+- Czech letters are easily accessible, most of them in one key stroke.
 - Every character typable on Colemak-DH is also typable on Colemak-DH-CZ, although some of them moved to other places or layers. Ultimately, almost all of the extra ways how to write `asciitilde` have been repurposed for something more useful.
 
-### Summary
+### Changes with regards to Colemak-DH
 
 In the following overview the target key locations are named after their standard Colemak location. Thus, when I say something like _`X` moved to layer 3 of `U`_ this means that the character `X` moved to layer 3 of that key where the Colemak-DH layout has `U`, not where the US QWERTY layout has `U`.
 
@@ -121,14 +122,13 @@ In the following overview the target key locations are named after their standar
 - `§` added at `AltGr-Shift-7`
 - `‰` added at `AltGr-Shift-8`
 
-## Install
+## Installation
 
-To install the keyboard layout, just link the file in `xkb/symbols/colemak-dh-cz` in your local xkb directory (or copy it there), e.g.:
+To install the keyboard layout, just link the file in `xkb/symbols/cz` in your local xkb directory (or copy it there), e.g.:
 
 ```
-ln -fs $HOME/src/colemak-dh-iso-cz/symbols/colemak-dh-cz $XDG_CONFIG_HOME/xkb/symbols/colemak-dh-cz
+ln -fs $HOME/src/colemak-dh-iso-cz/symbols/cz $XDG_CONFIG_HOME/xkb/symbols/cz
 ```
-
 
 Load it like this:
 ```
@@ -136,7 +136,7 @@ setxkbmap -I "$XDG_CONFIG_HOME/xkb" -model pc105 -layout cz -variant colemak_dh_
 xkbcomp -w0 -I "$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 ```
 
-Use it together with your other layout, e.g.:
+Although, you are probably going to use it in alternation with your other layout, e.g. with the standard `us(colemak_dh)`:
 
 ```
 setxkbmap -I "$XDG_CONFIG_HOME/xkb" \
@@ -149,7 +149,8 @@ setxkbmap -I "$XDG_CONFIG_HOME/xkb" \
 xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 ```
 
-The above command is also what you should add to your `~/.xinitrc` or `~/.xsession` (before the `exec`) to load it when X starts.
+The above command is also ready to be added to your `~/.xinitrc` or `~/.xsession` (before the `exec`) to load these keyboard layouts when X starts.
+
 
 ## References:
 
