@@ -152,7 +152,10 @@ xkbcomp -w0 -I"$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
 The above command is also what you should add to your `~/.xinitrc` or `~/.xsession` (before the `exec`) to load it when X starts.
 
 ## References:
-- Jan Králík: [Grapheme frequencies](http://www.czech-language.cz/alphabet/alph-prehled.html)
-- Stefan Trost: [Buchstabenhäufigkeit Tschechisch](https://www.sttmedia.de/buchstabenhaeufigkeit-tschechisch)
+
+- Jan Králík: [Grapheme Frequencies][kralik]
+- Stefan Trost: [Buchstabenhäufigkeit Tschechisch][trost]
 
 [x]: https://grokipedia.com/page/X%20Window%20System
+[kralik]: http://www.czech-language.cz/alphabet/alph-prehled.html
+[trost]: https://www.sttmedia.de/buchstabenhaeufigkeit-tschechisch
