@@ -2,9 +2,9 @@
 
 This repository provides the layout definition file for the [X Window System][x].
 
-In the following I present the standard `us(colemak_dh)` layout provided with X and then my modification of it, `cz(colemak_dh_cz)`, which makes all the Czech characters easier to type.
+In the following I present the standard `us(colemak_dh)` layout provided with the X Window System and then my modification of it, `cz(colemak_dh_cz)`, which makes all the Czech characters easier to type.
 
-The ASCII diagrams below show the basic keyboard keys with their four layers of mappings for each key like this:
+The ASCII diagrams of keyboard layouts below show the basic keyboard keys with their four layers of mappings for each key like this:
 
 ```
 ┌─────┐
@@ -23,7 +23,7 @@ Here `a`, `b`, `c`, `d` represent the characters mapped to layer 1 through layer
 
 ## Standard Colemak DH (US layout, variant colemak_dh)
 
-With the standard Colemak-DH variant of the US layout it is possible to type Czech characters but they are not readily accessible. Heavy use of dead keys and layer 3, layer 4 is necessary. It looks like this:
+With the standard Colemak-DH variant of the US layout it is already possible to type Czech characters but they are not readily accessible. Heavy use of dead keys and layer 3, layer 4 is necessary. It looks like this:
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
@@ -46,7 +46,7 @@ With the standard Colemak-DH variant of the US layout it is possible to type Cze
 
 ## Colemak DH CZ (This Layout)
 
-I propose the following modified Colemak layout to write Czech more easily:
+In this repository I provide the following modified Colemak layout to write Czech more easily:
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
@@ -67,7 +67,7 @@ I propose the following modified Colemak layout to write Czech more easily:
 └───────┴──────┴───────┴────────────────────────────────────┴───────┴──────┴──────┴───────┘
 ```
 
-### Motivation
+### Goals
 
 - Every Czech letter should be typable in one to three keystrokes (including dead keys and layer shifts)
 - Most frequent Czech letters shall be preferred to easily accessible numbers on the top row
@@ -87,7 +87,7 @@ I propose the following modified Colemak layout to write Czech more easily:
 
 ### Changes with regards to Colemak-DH
 
-In the following overview the target key locations are named after their standard Colemak location. Thus, when I say something like _`X` moved to layer 3 of `U`_ this means that the character `X` moved to layer 3 of that key where the Colemak-DH layout has `U`, not where the US QWERTY layout has `U`.
+Note: In the following overview the target key locations are named after their standard Colemak location. Thus, when I say something like _`X` moved to layer 3 of `U`_ this means that the character `X` moved to layer 3 of that key where the Colemak-DH layout has `U`, not where the US QWERTY layout has `U`.
 
 #### Regular Characters
 
@@ -126,13 +126,23 @@ In the following overview the target key locations are named after their standar
 
 ## Installation
 
-To install the keyboard layout, just link the file in `xkb/symbols/cz` in your local xkb directory (or copy it there), e.g.:
+To install the keyboard layout, just copy the file `xkb/symbols/cz` to your local xkb directory, e.g.:
 
 ```bash
-ln -fs $HOME/src/colemak-dh-iso-cz/symbols/cz $XDG_CONFIG_HOME/xkb/symbols/cz
+git clone https://github.com/fleetingbytes/colemak-dh-cz.git
+cd colemak-dh-cz
+mkdir -p $XDG_CONFIG_HOME/xkb/symbols/cz  # assuming $XDG_CONFIG_HOME is set
+cp xkb/symbols/cz $XDG_CONFIG_HOME/xkb/symbols
+```
+If you plan to keep the local clone of this repository, you may as well create a symbolic link to it in your xkb directory, so instead of the final `cp` command you can create a link like this:
+```bash
+ln -fs $(pwd)/xkb/symbols/cz $XDG_CONFIG_HOME/xkb/symbols/cz
 ```
 
-Load it like this:
+## Use
+
+Load the keyboard layout like this:
+
 ```bash
 setxkbmap -I "$XDG_CONFIG_HOME/xkb" -model pc105 -layout cz -variant colemak_dh_cz -print | \
 xkbcomp -w0 -I "$XDG_CONFIG_HOME/xkb" - "$DISPLAY"
